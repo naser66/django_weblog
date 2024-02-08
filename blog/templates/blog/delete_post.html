@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+    Delete Post
+{% endblock title %}
+{% block style %}
+    .myDiv {
+    border: 5px outset black;
+    background-color: light;
+    text-align: left;
+    padding: 5px;
+    }
+    .myDiv2 {
+    border: 2px outset gray;
+    padding: 5px;
+    background-color: lightblue;
+    text-align: left;
+    }
+
+    .myDiv3 {
+    border-top: 1px outset gray;
+    background-color: lightgray;
+    text-align: left;
+    padding: 5px;
+    }
+{% endblock style %}
+{% block body1 %}
+    <div class="myDiv">
+        <div class="myDiv2">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h3>Delete Post:</h3>
+                <p>Are you sure to Delete " {{ post.title }} " ?</p>
+                <button type="submit" class="btn btn-danger">Yes, Delete !</button>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock body1 %}

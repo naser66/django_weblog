@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block style %}
+    .myDiv {
+    border: 5px outset black;
+    background-color: light;
+    text-align: left;
+    padding: 5px;
+    }
+    .myDiv2 {
+    border-bottom: 2px outset gray;
+    padding: 5px;
+    background-color: lightblue;
+    text-align: left;
+    }
+
+    .myDiv3 {
+    border-top: 1px outset gray;
+    background-color: lightgray;
+    text-align: left;
+    padding: 5px;
+    }
+{% endblock style %}
+{% block body1 %}
+    {% for post in post_list %}
+        <div class="myDiv">
+            <div class="myDiv2">
+                <h2><a class="link-opacity-50-hover" href="/blog/{{ post.id }}">{{ post.title }}</a></h2>
+            </div>
+            <h4>{{ post.title }}</h4>
+            <p>{{ post.text }}
+                <a href="{% url 'post_detail' post.id %}" type="button" class="btn btn-primary">More Detail</a>
+            </p>
+
+
+            <div class="myDiv3">
+                Author: {{ post.author }} || Time: {{ post.datetime_created }}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock body1 %}

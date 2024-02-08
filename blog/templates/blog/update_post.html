@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}
+    Edit Post
+{% endblock title %}
+{% block style %}
+    .myDiv {
+    border: 5px outset black;
+    background-color: light;
+    text-align: left;
+    padding: 5px;
+    }
+    .myDiv2 {
+    border: 2px outset gray;
+    padding: 5px;
+    background-color: lightblue;
+    text-align: left;
+    }
+
+    .myDiv3 {
+    border-top: 1px outset gray;
+    background-color: lightgray;
+    text-align: left;
+    padding: 5px;
+    }
+{% endblock style %}
+{% block body1 %}
+    <div class="myDiv">
+        <div class="myDiv2">
+            <form method="POST">
+                {% csrf_token %}
+                <h3>Edit Post:</h3>
+                <table>
+                    {{ form.as_table }}
+                </table>
+                {#                <div class="form-group py2">#}
+                {#                    <label>Title:#}
+                {#                        <input type="text" name="title" class="form-control" placeholder="Enter your title">#}
+                {#                    </label>#}
+                {#                </div>#}
+                {#                <div class="form-group py2">#}
+                {#                    <label>Text:</label>#}
+                {#                    <textarea class="form-control" name="text" rows="6" placeholder="Enter your text here."></textarea>#}
+                {#                    <br>#}
+
+                {#                </div>#}
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock body1 %}
