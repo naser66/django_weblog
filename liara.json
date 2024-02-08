@@ -1,0 +1,18 @@
+{
+  "disks": [
+    {
+      "name": "naserdisk",
+      "mountTo": "naserdisk" 
+      
+    },
+    {
+      "name": "media",
+      "mountTo": "media"
+        
+      
+      
+    }
+    
+  ],
+  "app": "naserweblog"
+}
